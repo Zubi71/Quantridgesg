@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-navy: #0A1F44;
+  --color-navy-light: #152B52;
+  --color-gold: #C5A059;
+  --color-gold-light: #E5C185;
+  --color-gold-dark: #A68546;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Fixed nav + optional notch / status bar */
+    scroll-padding-top: max(5.25rem, calc(4.5rem + env(safe-area-inset-top, 0px)));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-white text-navy font-sans antialiased selection:bg-gold/20 selection:text-navy overflow-x-hidden;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+.section-padding {
+  @apply py-14 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24;
+}
+
+/* Headings: avoid ugly single-word rags on wide screens where supported */
+@supports (text-wrap: balance) {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
