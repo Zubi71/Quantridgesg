@@ -29,7 +29,12 @@ import {
   DollarSign,
   Droplets,
 } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 /** Easing used for scroll reveals — smooth, not bouncy */
 const easeOut = [0.22, 1, 0.36, 1] as const;
@@ -939,24 +944,97 @@ const Footer = () => {
 };
 
 export default function App() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const sections = gsap.utils.toArray(".diagonal-section") as HTMLElement[];
+    
+    // Create the diagonal stacking animation
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        pin: true,
+        scrub: 1.2, // Balanced scrub for responsiveness
+        snap: {
+          snapTo: 1 / (sections.length - 1),
+          duration: { min: 0.3, max: 0.8 },
+          delay: 0.1,
+          ease: "power2.inOut"
+        },
+        start: "top top",
+        end: () => `+=${window.innerHeight * (sections.length - 1)}`,
+        invalidateOnRefresh: true,
+      }
+    });
+
+    // Animate sections appearing diagonally from bottom-left to top-right
+    sections.forEach((section, i) => {
+      // Set z-index dynamically so each section overlays the previous one correctly
+      gsap.set(section, { zIndex: i + 1 });
+
+      if (i === 0) return; // First section (Hero) is already in view
+
+      tl.fromTo(section, 
+        { 
+          xPercent: -100, 
+          yPercent: 100,
+          opacity: 0.5,
+          scale: 0.95,
+        },
+        { 
+          xPercent: 0, 
+          yPercent: 0,
+          opacity: 1,
+          scale: 1,
+          ease: "none",
+        },
+        i - 1
+      );
+    });
+
+  }, { scope: containerRef });
+
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen selection:bg-gold/30 selection:text-navy overflow-x-hidden">
+      <div className="relative overflow-x-hidden bg-navy">
         <ScrollProgress />
         <Navbar />
-        <main>
-          <Hero />
-          <WhatWeDo />
-          <CorePrinciples />
-          <Markets />
-          <StrategyOverview />
-          <PerformancePhilosophy />
-          <RiskManagement />
-          <WhoWeWorkWith />
-          <CTA />
+        
+        <main ref={containerRef} className="diagonal-container">
+          <section className="diagonal-section">
+            <Hero />
+          </section>
+          <section className="diagonal-section">
+            <WhatWeDo />
+          </section>
+          <section className="diagonal-section">
+            <CorePrinciples />
+          </section>
+          <section className="diagonal-section">
+            <Markets />
+          </section>
+          <section className="diagonal-section">
+            <StrategyOverview />
+          </section>
+          <section className="diagonal-section">
+            <PerformancePhilosophy />
+          </section>
+          <section className="diagonal-section">
+            <RiskManagement />
+          </section>
+          <section className="diagonal-section">
+            <WhoWeWorkWith />
+          </section>
+          <section className="diagonal-section">
+            <CTA />
+          </section>
+          {/* Include footer as the final resting point */}
+          <section className="diagonal-section">
+            <Footer />
+          </section>
         </main>
-        <Footer />
       </div>
     </MotionConfig>
   );
 }
+
