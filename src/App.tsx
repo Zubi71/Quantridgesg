@@ -948,50 +948,85 @@ export default function App() {
 
   useGSAP(() => {
     const sections = gsap.utils.toArray(".diagonal-section") as HTMLElement[];
-    
-    // Create the diagonal stacking animation
+    const vh = window.innerHeight;
+
+    // Each section gets:
+    //   - 1 "unit" for the diagonal arrival (= vh pixels of scroll)
+    //   - proportional units for internal scroll if taller than viewport
+    // We treat 1 unit = vh pixels. Total timeline duration = total units.
+
+    const sectionData = sections.map((section, i) => {
+      const scrollHeight = section.scrollHeight;
+      const overflow = Math.max(0, scrollHeight - vh);
+      // arrival: 1 unit (except first which is already visible)
+      const arrivalUnits = i === 0 ? 0 : 1;
+      // internal scroll: overflow / vh units so 1 unit = 1 viewport
+      const internalUnits = overflow / vh;
+      return { section, arrivalUnits, internalUnits, overflow };
+    });
+
+    const totalUnits = sectionData.reduce(
+      (sum, d) => sum + d.arrivalUnits + d.internalUnits,
+      0
+    );
+
+    // Build the timeline — positions and durations are all in "units" (seconds)
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         pin: true,
-        scrub: 1.2, // Balanced scrub for responsiveness
-        snap: {
-          snapTo: 1 / (sections.length - 1),
-          duration: { min: 0.3, max: 0.8 },
-          delay: 0.1,
-          ease: "power2.inOut"
-        },
+        scrub: 1,
         start: "top top",
-        end: () => `+=${window.innerHeight * (sections.length - 1)}`,
+        // totalUnits "seconds" of animation = totalUnits * vh pixels of scroll
+        end: () => `+=${totalUnits * vh}`,
         invalidateOnRefresh: true,
       }
     });
 
-    // Animate sections appearing diagonally from bottom-left to top-right
-    sections.forEach((section, i) => {
-      // Set z-index dynamically so each section overlays the previous one correctly
-      gsap.set(section, { zIndex: i + 1 });
+    let cursor = 0; // current position in timeline (units/seconds)
 
-      if (i === 0) return; // First section (Hero) is already in view
+    sectionData.forEach(({ section, arrivalUnits, internalUnits, overflow }, i) => {
+      // Give higher z-index to later sections so they stack on top
+      gsap.set(section, { zIndex: i + 1 });
 
       const isFooter = section.classList.contains("footer-section");
 
-      tl.fromTo(section, 
-        { 
-          xPercent: isFooter ? 0 : -100, 
-          yPercent: 100,
-          opacity: 0.5,
-          scale: 0.95,
-        },
-        { 
-          xPercent: 0, 
-          yPercent: 0,
-          opacity: 1,
-          scale: 1,
-          ease: "none",
-        },
-        i - 1
-      );
+      // Phase 1 — Diagonal arrival animation
+      if (i > 0) {
+        tl.fromTo(
+          section,
+          {
+            xPercent: isFooter ? 0 : -100,
+            yPercent: 100,
+            opacity: 0.5,
+            scale: 0.95,
+          },
+          {
+            xPercent: 0,
+            yPercent: 0,
+            opacity: 1,
+            scale: 1,
+            ease: "none",
+            duration: arrivalUnits,
+          },
+          cursor
+        );
+        cursor += arrivalUnits;
+      }
+
+      // Phase 2 — Internal scroll for tall sections
+      if (overflow > 0) {
+        tl.to(
+          section,
+          {
+            y: -overflow,
+            ease: "none",
+            duration: internalUnits,
+          },
+          cursor
+        );
+        cursor += internalUnits;
+      }
     });
 
   }, { scope: containerRef });
