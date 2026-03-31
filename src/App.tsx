@@ -974,9 +974,11 @@ export default function App() {
 
       if (i === 0) return; // First section (Hero) is already in view
 
+      const isFooter = section.classList.contains("footer-section");
+
       tl.fromTo(section, 
         { 
-          xPercent: -100, 
+          xPercent: isFooter ? 0 : -100, 
           yPercent: 100,
           opacity: 0.5,
           scale: 0.95,
@@ -1029,7 +1031,7 @@ export default function App() {
             <CTA />
           </section>
           {/* Include footer as the final resting point */}
-          <section className="diagonal-section">
+          <section className="diagonal-section footer-section">
             <Footer />
           </section>
         </main>
