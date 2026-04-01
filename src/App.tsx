@@ -615,7 +615,7 @@ const StrategyOverview = () => {
 
 const PerformancePhilosophy = () => {
   return (
-    <section className="section-padding bg-white relative z-10">
+    <section className="section-padding !pt-[100px] !pb-[150px] bg-white relative z-10">
       <div className="max-w-4xl mx-auto text-center px-3 sm:px-4">
         <motion.div
           initial="hidden"
@@ -714,7 +714,7 @@ const RiskManagement = () => {
 
 const WhoWeWorkWith = () => {
   return (
-    <section id="who-we-are" className="section-padding !pt-[150px] !pb-[200px] !min-h-fit bg-white relative z-10">
+    <section id="who-we-are" className="section-padding pt-16 pb-0 sm:pt-[150px] sm:pb-[200px] !min-h-fit bg-white relative z-10">
       <motion.div
         className="max-w-7xl mx-auto text-center mb-12 md:mb-16 px-2"
         initial="hidden"
@@ -1145,36 +1145,36 @@ export default function App() {
         <Navbar />
 
         <main ref={containerRef} className="diagonal-container">
-          <section className="diagonal-section">
+          <section className="diagonal-section bg-white">
             <Hero />
           </section>
-          <section className="diagonal-section">
+          <section className="diagonal-section bg-white">
             <WhatWeDo />
           </section>
-          <section className="diagonal-section">
+          <section className="diagonal-section bg-navy">
             <CorePrinciples />
           </section>
-          <section className="diagonal-section">
+          <section className="diagonal-section bg-white">
             <Markets />
           </section>
-          <section className="diagonal-section">
+          <section className="diagonal-section bg-white">
             <StrategyOverview />
           </section>
-          <section className="diagonal-section">
+          <section className="diagonal-section bg-white">
             <PerformancePhilosophy />
           </section>
-          <section className="diagonal-section">
+          <section className="diagonal-section bg-navy">
             <RiskManagement />
           </section>
           {/* WhoWeWorkWith + CTA share one bottom animation on mobile */}
-          <section className="diagonal-section mobile-group-first">
+          <section className="diagonal-section mobile-group-first max-sm:!min-h-fit bg-white">
             <WhoWeWorkWith />
           </section>
-          <section className="diagonal-section mobile-group-second">
+          <section className="diagonal-section mobile-group-second max-sm:!min-h-fit bg-navy">
             <CTA />
           </section>
           {/* Footer */}
-          <section className="diagonal-section footer-section">
+          <section className="diagonal-section footer-section bg-navy">
             <Footer />
           </section>
         </main>
