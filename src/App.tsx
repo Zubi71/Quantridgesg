@@ -714,7 +714,7 @@ const RiskManagement = () => {
 
 const WhoWeWorkWith = () => {
   return (
-    <section id="who-we-are" className="section-padding !pb-0 !min-h-fit bg-white relative z-10">
+    <section id="who-we-are" className="section-padding !pt-[150px] !pb-[200px] !min-h-fit bg-white relative z-10">
       <motion.div
         className="max-w-7xl mx-auto text-center mb-12 md:mb-16 px-2"
         initial="hidden"
