@@ -56,17 +56,10 @@
   left: 0;
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
   will-change: transform;
 }
 
-/* Desktop and Tablet specific height handling */
-@media (min-width: 1024px) {
-  .diagonal-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
 
 /* Headings: avoid ugly single-word rags on wide screens where supported */
 @supports (text-wrap: balance) {
