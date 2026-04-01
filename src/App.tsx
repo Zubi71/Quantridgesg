@@ -140,16 +140,27 @@ const Logo = ({ light = false }: { light?: boolean }) => (
 );
 
 const Navbar = () => {
+  // placeholder_for_replace
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
-  useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 32));
+
+  useMotionValueEvent(scrollY, "change", (v) => {
+    const prev = scrollY.getPrevious() ?? 0;
+    setScrolled(v > 32);
+    if (v > 80) {
+      setHidden(v > prev);
+    } else {
+      setHidden(false);
+    }
+  });
 
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.55, ease: easeOut }}
+      animate={{ y: hidden ? "-100%" : 0, opacity: 1 }}
+      transition={{ duration: 0.38, ease: easeOut }}
       className={`fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b supports-[backdrop-filter]:bg-white/80 transition-shadow duration-500 pt-[env(safe-area-inset-top,0px)] ${
         scrolled ? "border-gray-200/80 shadow-lg shadow-navy/[0.06]" : "border-gray-100 shadow-none"
       }`}
@@ -398,7 +409,7 @@ const CorePrinciples = () => {
           </motion.h2>
         </motion.div>
         
-        <div className="grid md:grid-cols-3 gap-0 border border-white/10 rounded-sm overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10 rounded-sm overflow-hidden">
           {[
             { title: "Integrity", desc: "Our reputation is our most valuable asset. We maintain the highest ethical standards in every interaction." },
             { title: "Innovation", desc: "We constantly challenge conventional wisdom, seeking better ways to solve complex problems." },
@@ -411,7 +422,7 @@ const CorePrinciples = () => {
               viewport={reveal}
               transition={{ delay: i * 0.12, duration: 0.58, ease: easeOut }}
               whileHover={{ scale: 1.01, transition: { duration: 0.35 } }}
-              className={`p-8 sm:p-12 md:p-16 ${i !== 2 ? 'md:border-r border-b md:border-b-0 border-white/10' : ''} hover:bg-white/5 transition-colors duration-700 group cursor-default`}
+              className={`p-6 sm:p-10 md:p-16 ${i !== 2 ? 'md:border-r border-b md:border-b-0 border-white/10' : ''} hover:bg-white/5 transition-colors duration-700 group cursor-default`}
             >
               <span className="text-5xl sm:text-6xl md:text-7xl font-serif text-gold/20 group-hover:text-gold/50 transition-colors mb-6 sm:mb-10 block">0{i+1}</span>
               <h3 className="text-2xl sm:text-3xl font-serif mb-4 sm:mb-6 text-gold">{item.title}</h3>
@@ -489,7 +500,7 @@ const Markets = () => {
               viewport={reveal}
               transition={{ delay: i * 0.055, duration: 0.5, ease: easeOut }}
               whileHover={{ backgroundColor: '#0A1F44', color: '#ffffff', y: -3 }}
-              className="p-6 sm:p-8 md:p-10 lg:p-12 bg-white flex flex-col justify-between group cursor-default transition-all duration-500 min-h-[200px] sm:min-h-[240px] md:min-h-[280px] relative overflow-hidden min-w-0"
+              className="p-5 sm:p-8 md:p-10 lg:p-12 bg-white flex flex-col justify-between group cursor-default transition-all duration-500 min-h-[160px] sm:min-h-[220px] md:min-h-[260px] relative overflow-hidden min-w-0"
             >
               {/* Background Code Accent */}
               <span className="absolute -right-4 -bottom-4 text-9xl font-serif font-bold text-navy/[0.02] group-hover:text-white/[0.03] transition-colors pointer-events-none uppercase">
@@ -617,7 +628,7 @@ const PerformancePhilosophy = () => {
           </motion.p>
           <motion.h2
             variants={fadeUpItem}
-            className="whitespace-nowrap text-center font-serif text-navy mb-6 md:mb-8 px-1 text-lg min-[380px]:text-xl sm:text-4xl md:text-5xl"
+            className="text-center font-serif text-navy mb-6 md:mb-8 px-1 text-xl sm:text-4xl md:text-5xl"
           >
             Performance Philosophy
           </motion.h2>
@@ -703,7 +714,7 @@ const RiskManagement = () => {
 
 const WhoWeWorkWith = () => {
   return (
-    <section id="who-we-are" className="section-padding bg-white relative z-10">
+    <section id="who-we-are" className="section-padding !pb-0 !min-h-fit bg-white relative z-10">
       <motion.div
         className="max-w-7xl mx-auto text-center mb-12 md:mb-16 px-2"
         initial="hidden"
@@ -741,7 +752,7 @@ const WhoWeWorkWith = () => {
         </div>
       </motion.div>
       <motion.div
-        className="mt-12 md:mt-20 max-w-3xl mx-auto text-center px-4"
+        className="mt-8 md:mt-12 max-w-3xl mx-auto text-center px-4"
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={reveal}
@@ -757,9 +768,9 @@ const WhoWeWorkWith = () => {
 
 const CTA = () => {
   return (
-    <section className="py-16 sm:py-24 md:py-28 lg:py-32 bg-white px-3 sm:px-6 relative z-10">
+    <section className="pb-16 sm:pb-24 md:pb-28 lg:pb-32 pt-0 !min-h-fit bg-navy px-3 sm:px-6 relative z-10">
       <motion.div
-        className="max-w-5xl mx-auto bg-navy p-6 sm:p-12 md:p-16 lg:p-24 text-center rounded-md shadow-2xl shadow-navy/20"
+        className="max-w-5xl mx-auto bg-navy p-6 sm:p-12 md:p-16 lg:p-24 text-center shadow-none"
         initial={{ opacity: 0, y: 40, scale: 0.97 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={reveal}
@@ -947,84 +958,180 @@ export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const sections = gsap.utils.toArray(".diagonal-section") as HTMLElement[];
+    const isMobile = window.innerWidth < 1024;
+
+    if (!isMobile) {
+      // DESKTOP: original diagonal stacking animation
+      const sections = gsap.utils.toArray(".diagonal-section") as HTMLElement[];
+      const vh = window.innerHeight;
+
+      const sectionData = sections.map((section, i) => {
+        const scrollHeight = section.scrollHeight;
+        const overflow = Math.max(0, scrollHeight - vh);
+        const arrivalUnits = i === 0 ? 0 : 1;
+        const internalUnits = overflow / vh;
+        return { section, arrivalUnits, internalUnits, overflow };
+      });
+
+      const totalUnits = sectionData.reduce(
+        (sum, d) => sum + d.arrivalUnits + d.internalUnits,
+        0
+      );
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          end: () => `+=${totalUnits * vh}`,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      let cursor = 0;
+
+      sectionData.forEach(({ section, arrivalUnits, internalUnits, overflow }, i) => {
+        gsap.set(section, { zIndex: i + 1 });
+        const isFooter = section.classList.contains("footer-section");
+
+        if (i > 0) {
+          tl.fromTo(
+            section,
+            { xPercent: isFooter ? 0 : -100, yPercent: 100, opacity: 0.5, scale: 0.95 },
+            { xPercent: 0, yPercent: 0, opacity: 1, scale: 1, ease: "none", duration: arrivalUnits },
+            cursor
+          );
+          cursor += arrivalUnits;
+        }
+
+        if (overflow > 0) {
+          tl.to(section, { y: -overflow, ease: "none", duration: internalUnits }, cursor);
+          cursor += internalUnits;
+        }
+      });
+
+      return;
+    }
+
+    // MOBILE: slide-from-bottom with rounded corners
+    // Single pinned timeline - same structure as desktop but:
+    //   No xPercent (straight from bottom), rounded top corners (24px)
+    //   WhoWeWorkWith(7) + CTA(8) share ONE arrival animation + scroll together
+    //   Footer slides straight up, no rounding
+    //
+    // Section indices:
+    //   Hero(0), WhatWeDo(1), CorePrinciples(2), Markets(3),
+    //   StrategyOverview(4), PerformancePhilosophy(5), RiskManagement(6),
+    //   WhoWeWorkWith(7), CTA(8), Footer(9)
+
+    const allSections = gsap.utils.toArray(".diagonal-section") as HTMLElement[];
     const vh = window.innerHeight;
+    const ROUND = "24px 24px 0 0";
 
-    // Each section gets:
-    //   - 1 "unit" for the diagonal arrival (= vh pixels of scroll)
-    //   - proportional units for internal scroll if taller than viewport
-    // We treat 1 unit = vh pixels. Total timeline duration = total units.
+    // For the grouped pair (7+8):
+    // CTA sits below WhoWeWorkWith in y-space (at top: whoScrollHeight).
+    // Both animate in together (one entry tween), then both scroll up together.
+    // The combined content height = who.scrollHeight + cta.scrollHeight.
+    // Combined overflow = combinedH - vh (how much we need to scroll to see it all).
+    //
+    // When we start scrolling the combined group:
+    //   y = 0 → top of WhoWeWorkWith visible
+    //   y = -who.scrollHeight → top of CTA visible (WhoWeWorkWith scrolled away)
+    //   y = -(who.scrollHeight + cta.scrollHeight - vh) → bottom of CTA visible
 
-    const sectionData = sections.map((section, i) => {
-      const scrollHeight = section.scrollHeight;
-      const overflow = Math.max(0, scrollHeight - vh);
-      // arrival: 1 unit (except first which is already visible)
-      const arrivalUnits = i === 0 ? 0 : 1;
-      // internal scroll: overflow / vh units so 1 unit = 1 viewport
-      const internalUnits = overflow / vh;
-      return { section, arrivalUnits, internalUnits, overflow };
+    const whoSection = allSections[7];
+    const ctaSection = allSections[8];
+
+    const riskSection = allSections[6];
+    if (riskSection && whoSection && ctaSection) {
+      // Risk is at top: 0 by default. Who follows Risk. CTA follows Who.
+      gsap.set(whoSection, { top: riskSection.scrollHeight });
+      gsap.set(ctaSection, { top: riskSection.scrollHeight + whoSection.scrollHeight });
+    }
+
+    interface MobileSectionData {
+      section: HTMLElement;
+      partner?: HTMLElement; partners?: HTMLElement[];
+      arrivalUnits: number;
+      internalUnits: number;
+      overflow: number;
+      skip?: boolean;
+    }
+
+    const sectionData: MobileSectionData[] = allSections.map((section, i) => {
+      if (i === 0) {
+        const overflow = Math.max(0, section.scrollHeight - vh);
+        return { section, arrivalUnits: 0, internalUnits: overflow / vh, overflow };
+      }
+      if (i === 6) {
+        // Group: Risk (6) + Who (7) + CTA (8) into one tall scrolling block
+        const who = allSections[7];
+        const cta = allSections[8];
+        const combinedH = section.scrollHeight + who.scrollHeight + cta.scrollHeight;
+        const combinedOverflow = Math.max(0, combinedH - vh);
+        return { section, partners: [who, cta], arrivalUnits: 1, internalUnits: combinedOverflow / vh, overflow: combinedOverflow };
+      }
+      if (i === 7 || i === 8) {
+        return { section, arrivalUnits: 0, internalUnits: 0, overflow: 0, skip: true };
+      }
+      const overflow = Math.max(0, section.scrollHeight - vh);
+      return { section, arrivalUnits: 1, internalUnits: overflow / vh, overflow };
     });
 
-    const totalUnits = sectionData.reduce(
-      (sum, d) => sum + d.arrivalUnits + d.internalUnits,
-      0
-    );
+    const totalUnits = sectionData.reduce((sum, d) => sum + d.arrivalUnits + d.internalUnits, 0);
 
-    // Build the timeline — positions and durations are all in "units" (seconds)
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         pin: true,
         scrub: 1,
         start: "top top",
-        // totalUnits "seconds" of animation = totalUnits * vh pixels of scroll
         end: () => `+=${totalUnits * vh}`,
         invalidateOnRefresh: true,
-      }
+      },
     });
 
-    let cursor = 0; // current position in timeline (units/seconds)
+    let cursor = 0;
 
-    sectionData.forEach(({ section, arrivalUnits, internalUnits, overflow }, i) => {
-      // Give higher z-index to later sections so they stack on top
+    sectionData.forEach(({ section, partner, partners, arrivalUnits, internalUnits, overflow, skip }, i) => {
+      if (skip) return;
+
       gsap.set(section, { zIndex: i + 1 });
-
       const isFooter = section.classList.contains("footer-section");
 
-      // Phase 1 — Diagonal arrival animation
-      if (i > 0) {
-        tl.fromTo(
-          section,
-          {
-            xPercent: isFooter ? 0 : -100,
-            yPercent: 100,
-            opacity: 0.5,
-            scale: 0.95,
-          },
-          {
-            xPercent: 0,
-            yPercent: 0,
-            opacity: 1,
-            scale: 1,
-            ease: "none",
-            duration: arrivalUnits,
-          },
-          cursor
-        );
+      // Phase 1: slide in from bottom with rounded top corners
+      if (i > 0 && arrivalUnits > 0) {
+        const partnersList = partners ? partners : (partner ? [partner] : []);
+        if (partnersList.length > 0) {
+          partnersList.forEach((p, idx) => gsap.set(p, { zIndex: i + idx + 2 }));
+          tl.fromTo(
+            [section, ...partnersList],
+            { yPercent: 100, opacity: 0, borderRadius: ROUND },
+            { yPercent: 0, opacity: 1, borderRadius: ROUND, ease: "none", duration: arrivalUnits },
+            cursor
+          );
+        } else {
+          tl.fromTo(
+            section,
+            { yPercent: 100, opacity: 0, borderRadius: ROUND },
+            {
+              yPercent: 0,
+              opacity: 1,
+              borderRadius: isFooter ? "0px" : ROUND,
+              ease: "none",
+              duration: arrivalUnits,
+            },
+            cursor
+          );
+        }
         cursor += arrivalUnits;
       }
 
-      // Phase 2 — Internal scroll for tall sections
+      // Phase 2: internal scroll for tall sections / combined panels
       if (overflow > 0) {
-        tl.to(
-          section,
-          {
-            y: -overflow,
-            ease: "none",
-            duration: internalUnits,
-          },
-          cursor
-        );
+        const targets = partners ? [section, ...partners] : (partner ? [section, partner] : [section]);
+        tl.to(targets, { y: -overflow, ease: "none", duration: internalUnits }, cursor);
         cursor += internalUnits;
       }
     });
@@ -1036,7 +1143,7 @@ export default function App() {
       <div className="relative overflow-x-hidden bg-navy">
         <ScrollProgress />
         <Navbar />
-        
+
         <main ref={containerRef} className="diagonal-container">
           <section className="diagonal-section">
             <Hero />
@@ -1059,13 +1166,14 @@ export default function App() {
           <section className="diagonal-section">
             <RiskManagement />
           </section>
-          <section className="diagonal-section">
+          {/* WhoWeWorkWith + CTA share one bottom animation on mobile */}
+          <section className="diagonal-section mobile-group-first">
             <WhoWeWorkWith />
           </section>
-          <section className="diagonal-section">
+          <section className="diagonal-section mobile-group-second">
             <CTA />
           </section>
-          {/* Include footer as the final resting point */}
+          {/* Footer */}
           <section className="diagonal-section footer-section">
             <Footer />
           </section>
@@ -1074,4 +1182,3 @@ export default function App() {
     </MotionConfig>
   );
 }
-
