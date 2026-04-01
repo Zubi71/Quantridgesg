@@ -1107,16 +1107,16 @@ export default function App() {
           partnersList.forEach((p, idx) => gsap.set(p, { zIndex: i + idx + 2 }));
           tl.fromTo(
             [section, ...partnersList],
-            { yPercent: 100, opacity: 0, borderRadius: ROUND },
-            { yPercent: 0, opacity: 1, borderRadius: ROUND, ease: "none", duration: arrivalUnits },
+            { y: vh, opacity: 0, borderRadius: ROUND },
+            { y: 0, opacity: 1, borderRadius: ROUND, ease: "none", duration: arrivalUnits },
             cursor
           );
         } else {
           tl.fromTo(
             section,
-            { yPercent: 100, opacity: 0, borderRadius: ROUND },
+            { y: vh, opacity: 0, borderRadius: ROUND },
             {
-              yPercent: 0,
+              y: 0,
               opacity: 1,
               borderRadius: isFooter ? "0px" : ROUND,
               ease: "none",
