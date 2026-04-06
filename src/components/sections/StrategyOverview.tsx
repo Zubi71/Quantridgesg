@@ -32,7 +32,7 @@ const StrategyOverview = () => (
           <ParallaxImage src="/approach-visual.png" alt="Strategy and growth visualization" className="w-full aspect-[4/3] max-h-[260px] min-[480px]:max-h-[300px] sm:max-h-[360px] md:max-h-none sm:aspect-auto object-cover object-center" />
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={reveal} transition={{ delay: 0.15, duration: 0.55, ease: easeOut }} className="mt-6 sm:mt-8 lg:absolute lg:-bottom-8 xl:-bottom-10 lg:-left-6 xl:-left-10 bg-navy p-6 sm:p-8 text-white max-w-full lg:max-w-xs shadow-lg">
-          <p className="text-gold font-serif text-base sm:text-lg italic leading-relaxed">"Alpha is found in the patterns others ignore."</p>
+          <p className="text-gold font-serif text-base sm:text-lg leading-relaxed">"Alpha is found in the patterns others ignore."</p>
         </motion.div>
       </div>
     </div>

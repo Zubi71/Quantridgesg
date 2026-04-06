@@ -8,7 +8,7 @@ const CTA = () => (
       <motion.div initial="hidden" whileInView="visible" viewport={reveal} variants={staggerContainer(0.11, 0.05)}>
         <motion.h2 variants={fadeUpItem} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 md:mb-8 leading-tight">
           Ready to explore the <br className="hidden sm:block" />
-          <span className="text-gold italic">next frontier?</span>
+          <span className="text-gold">next frontier?</span>
         </motion.h2>
         <motion.p variants={fadeUpItem} className="text-white/60 text-base sm:text-lg mb-10 md:mb-12 max-w-2xl mx-auto font-light">
           Connect with our institutional relations team to learn more about our investment strategies and partnership opportunities.

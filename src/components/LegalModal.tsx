@@ -53,7 +53,7 @@ const LegalModal = () => {
                 <ShieldAlert className="text-gold" size={28} />
               </div>
               <div>
-                <h2 className="text-white font-serif text-2xl sm:text-3xl leading-tight">Legal <span className="text-gold italic">Disclaimer.</span></h2>
+                <h2 className="text-gold font-serif text-2xl sm:text-3xl leading-tight">Legal Disclaimer.</h2>
                 <p className="text-white/40 uppercase tracking-[0.3em] text-[10px] mt-1 font-bold">Institutional Access Only</p>
               </div>
             </div>
@@ -68,7 +68,7 @@ const LegalModal = () => {
                   </h3>
                   <p>QUANTRIDGE CAPITAL PTE. LTD. and its affiliates (collectively, “QuantRidge”) have become aware of instances involving fraudulent entities, impersonators, unauthorised websites, applications, and communication channels falsely claiming to be associated with QuantRidge or its representatives.</p>
                   <p className="mt-4">These unauthorised parties may misuse the QuantRidge name, brand, or likeness with the intent to mislead or defraud individuals. QuantRidge does not operate, endorse, or assume any responsibility for such third-party activities, and any engagement with such parties is undertaken entirely at your own risk.</p>
-                  <p className="mt-4 italic">All official communications from QuantRidge will only be conducted through verified and authorised channels.</p>
+                  <p className="mt-4">All official communications from QuantRidge will only be conducted through verified and authorised channels.</p>
                 </section>
 
                 <hr className="border-navy/5" />
@@ -91,7 +91,7 @@ const LegalModal = () => {
                 <section>
                   <h3 className="text-navy font-bold text-sm uppercase tracking-widest mb-4">Jurisdictional Restrictions</h3>
                   <p>The information contained on this website is not intended for distribution to, or use by, any person in any jurisdiction where such distribution or use would be contrary to local laws or regulatory requirements.</p>
-                  <p className="mt-4 text-xs italic opacity-60 uppercase tracking-widest">No action has been taken by QuantRidge to permit a public offering of any investment product or service in any jurisdiction.</p>
+                  <p className="mt-4 text-xs opacity-60 uppercase tracking-widest">No action has been taken by QuantRidge to permit a public offering of any investment product or service in any jurisdiction.</p>
                 </section>
 
                 <section>
@@ -109,7 +109,7 @@ const LegalModal = () => {
                 <section>
                   <h3 className="text-navy font-bold text-sm uppercase tracking-widest mb-4 text-red-800">Risk Disclosure</h3>
                   <p>Investing involves risk, including the potential loss of capital.</p>
-                  <p className="mt-4 italic">Past performance, simulated results, or projected returns are not indicative of future performance. Quantitative strategies may be subject to model risk, market regime shifts, liquidity constraints, and unforeseen events.</p>
+                  <p className="mt-4">Past performance, simulated results, or projected returns are not indicative of future performance. Quantitative strategies may be subject to model risk, market regime shifts, liquidity constraints, and unforeseen events.</p>
                   <p className="mt-4 font-bold">No assurance can be given that any investment objective will be achieved.</p>
                 </section>
 

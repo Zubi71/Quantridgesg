@@ -23,7 +23,7 @@ const RiskDisclosure = () => {
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Risk <span className="italic text-gold opacity-90">Disclosure.</span>
+              Risk <span className="text-gold opacity-90">Disclosure.</span>
             </motion.h1>
             <motion.div variants={fadeUpItem} className="flex items-center gap-4 text-white/50 uppercase tracking-[0.2em] text-[10px] font-bold">
               <ShieldCheck size={18} className="text-gold" />
@@ -40,7 +40,7 @@ const RiskDisclosure = () => {
             
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">01.</span> Introduction
+                <span className="text-gold text-lg opacity-50 font-serif">01.</span> Introduction
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>1.1 This Risk Disclosure Statement sets out the key risks associated with financial markets, trading strategies, and the use of research, technology, and investment-related insights provided by QuantRidge.</p>
@@ -50,7 +50,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">02.</span> No Advice
+                <span className="text-gold text-lg opacity-50 font-serif">02.</span> No Advice
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>2.1 QuantRidge does not provide financial, investment, legal, or tax advice.</p>
@@ -60,7 +60,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">03.</span> Market Risk
+                <span className="text-gold text-lg opacity-50 font-serif">03.</span> Market Risk
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>3.1 Financial markets are volatile and subject to rapid and unpredictable changes.</p>
@@ -70,7 +70,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">04.</span> Leverage Risk
+                <span className="text-gold text-lg opacity-50 font-serif">04.</span> Leverage Risk
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>4.1 Use of leverage may amplify gains and losses.</p>
@@ -80,7 +80,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">05.</span> Model and Strategy Risk
+                <span className="text-gold text-lg opacity-50 font-serif">05.</span> Model and Strategy Risk
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>5.1 Quantitative strategies may fail under certain market conditions.</p>
@@ -90,7 +90,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">06.</span> Technology Risk
+                <span className="text-gold text-lg opacity-50 font-serif">06.</span> Technology Risk
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>6.1 System failures, latency, or disruptions may impact execution.</p>
@@ -100,7 +100,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">07.</span> Liquidity Risk
+                <span className="text-gold text-lg opacity-50 font-serif">07.</span> Liquidity Risk
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>7.1 Certain markets or instruments may have limited liquidity.</p>
@@ -110,7 +110,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">08.</span> Counterparty Risk
+                <span className="text-gold text-lg opacity-50 font-serif">08.</span> Counterparty Risk
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>8.1 Users are exposed to risks related to brokers, custodians, and financial institutions.</p>
@@ -120,7 +120,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">09.</span> Regulatory Risk
+                <span className="text-gold text-lg opacity-50 font-serif">09.</span> Regulatory Risk
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>9.1 Changes in laws or regulations may impact trading strategies and operations.</p>
@@ -129,7 +129,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">10.</span> Data and Information Risk
+                <span className="text-gold text-lg opacity-50 font-serif">10.</span> Data and Information Risk
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>10.1 Data used in analysis may be incomplete or inaccurate.</p>
@@ -139,7 +139,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">11.</span> No Guarantee of Returns
+                <span className="text-gold text-lg opacity-50 font-serif">11.</span> No Guarantee of Returns
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>11.1 There is no guarantee of profitability or performance.</p>
@@ -149,7 +149,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">12.</span> User Responsibility
+                <span className="text-gold text-lg opacity-50 font-serif">12.</span> User Responsibility
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>12.1 Users are solely responsible for their own decisions and outcomes.</p>
@@ -158,7 +158,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">13.</span> Limitation of Liability
+                <span className="text-gold text-lg opacity-50 font-serif">13.</span> Limitation of Liability
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>13.1 QuantRidge shall not be liable for any losses arising from reliance on its content or systems.</p>
@@ -167,7 +167,7 @@ const RiskDisclosure = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">14.</span> Acknowledgement
+                <span className="text-gold text-lg opacity-50 font-serif">14.</span> Acknowledgement
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>14.1 By using QuantRidge platforms, users acknowledge and accept these risks.</p>

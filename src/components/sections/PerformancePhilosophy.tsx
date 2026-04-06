@@ -8,7 +8,7 @@ const PerformancePhilosophy = () => (
       <motion.div initial="hidden" whileInView="visible" viewport={reveal} variants={staggerContainer(0.12, 0)}>
         <motion.p variants={fadeUpItem} className="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-4">Philosophy</motion.p>
         <motion.h2 variants={fadeUpItem} className="text-center font-serif text-navy mb-6 md:mb-8 px-1 text-xl sm:text-4xl md:text-5xl">Performance Philosophy</motion.h2>
-        <motion.p variants={fadeUpItem} className="text-base sm:text-lg md:text-xl text-navy/70 leading-relaxed mb-10 md:mb-12 font-serif italic max-w-3xl mx-auto">
+        <motion.p variants={fadeUpItem} className="text-base sm:text-lg md:text-xl text-navy/70 leading-relaxed mb-10 md:mb-12 font-serif max-w-3xl mx-auto">
           "We do not seek to predict the future; we seek to understand the probabilities of the present. Sustainable performance is the result of disciplined process, not lucky guesses."
         </motion.p>
       </motion.div>

@@ -23,7 +23,7 @@ const TermsOfUse = () => {
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Terms of <span className="italic text-gold opacity-90">Use.</span>
+              Terms of <span className="text-gold opacity-90">Use.</span>
             </motion.h1>
             <motion.div variants={fadeUpItem} className="flex items-center gap-4 text-white/50 uppercase tracking-[0.2em] text-[10px] font-bold">
               <ShieldCheck size={18} className="text-gold" />
@@ -40,7 +40,7 @@ const TermsOfUse = () => {
             
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">01.</span> Introduction
+                <span className="text-gold text-lg opacity-50 font-serif">01.</span> Introduction
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>1.1 These Terms of Use govern your access to and use of the QuantRidge website, platforms and materials.</p>
@@ -50,7 +50,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">02.</span> Regulatory Positioning
+                <span className="text-gold text-lg opacity-50 font-serif">02.</span> Regulatory Positioning
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>2.1 QuantRidge provides research, technology, and investment-related insights only.</p>
@@ -61,7 +61,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">03.</span> No Reliance
+                <span className="text-gold text-lg opacity-50 font-serif">03.</span> No Reliance
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>3.1 Information provided is for general informational purposes only.</p>
@@ -71,7 +71,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">04.</span> Risk Disclosure
+                <span className="text-gold text-lg opacity-50 font-serif">04.</span> Risk Disclosure
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>4.1 Trading and investing involve significant risk.</p>
@@ -81,7 +81,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">05.</span> Intellectual Property
+                <span className="text-gold text-lg opacity-50 font-serif">05.</span> Intellectual Property
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>5.1 All content, systems, and materials are owned by QuantRidge.</p>
@@ -91,7 +91,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">06.</span> User Obligations
+                <span className="text-gold text-lg opacity-50 font-serif">06.</span> User Obligations
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>6.1 Users must not misuse the website or attempt unauthorised access.</p>
@@ -101,7 +101,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">07.</span> Limitation of Liability
+                <span className="text-gold text-lg opacity-50 font-serif">07.</span> Limitation of Liability
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>7.1 QuantRidge shall not be liable for any losses arising from use of this website.</p>
@@ -111,7 +111,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">08.</span> Third-Party Links
+                <span className="text-gold text-lg opacity-50 font-serif">08.</span> Third-Party Links
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>8.1 QuantRidge may include links to third-party services.</p>
@@ -122,9 +122,9 @@ const TermsOfUse = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <div className="px-8 py-10 bg-navy/5 border-l-4 border-gold rounded-sm">
                 <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-6 flex items-baseline gap-4">
-                  <span className="text-gold text-lg italic opacity-50 font-serif">09.</span> Termination
+                  <span className="text-gold text-lg opacity-50 font-serif">09.</span> Termination
                 </h2>
-                <p className="text-navy/70 text-lg sm:text-xl font-light leading-relaxed italic">
+                <p className="text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                   9.1 QuantRidge reserves the right to restrict or terminate access at its discretion.
                 </p>
               </div>
@@ -132,7 +132,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic opacity-50 font-serif">10.</span> Governing Law
+                <span className="text-gold text-lg opacity-50 font-serif">10.</span> Governing Law
               </h2>
               <div className="space-y-6 text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 <p>10.1 These Terms are governed by the laws of Singapore.</p>
@@ -142,7 +142,7 @@ const TermsOfUse = () => {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
-                <span className="text-gold text-lg italic font-serif opacity-50">11.</span> Updates
+                <span className="text-gold text-lg font-serif opacity-50">11.</span> Updates
               </h2>
               <p className="text-navy/70 text-lg sm:text-xl font-light leading-relaxed">
                 11.1 These Terms may be updated from time to time.

@@ -48,9 +48,9 @@ const Hero = () => (
             <span className="leading-snug">Institutional Grade Quantitative Trading</span>
           </motion.div>
           <motion.h1 variants={fadeUpItem} className="text-[2rem] min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-navy leading-[1.08] sm:leading-[1.05] mb-6 sm:mb-8 tracking-tighter max-lg:overflow-x-auto lg:overflow-visible lg:text-balance">
-            <span className="block whitespace-nowrap lg:hidden">Precision in <span className="italic text-gold">Complexity.</span></span>
+            <span className="block whitespace-nowrap lg:hidden">Precision in <span className="text-gold">Complexity.</span></span>
             <span className="hidden lg:block">Precision in</span>
-            <span className="hidden lg:block italic text-gold">Complexity.</span>
+            <span className="hidden lg:block text-gold">Complexity.</span>
           </motion.h1>
         </motion.div>
         <div className="block w-full max-lg:mb-8 lg:hidden"><HeroChartCard className="mt-1 sm:mt-2" /></div>

@@ -18,7 +18,7 @@ const WhoWeWorkWith = () => (
       </div>
     </motion.div>
     <motion.div className="mt-8 md:mt-12 max-w-3xl mx-auto text-center px-4" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ delay: 0.1, duration: 0.55, ease: easeOut }}>
-      <p className="text-navy/60 leading-relaxed italic text-sm sm:text-base">
+      <p className="text-navy/60 leading-relaxed text-sm sm:text-base">
         "QuantRidge Capital partners with sophisticated institutional investors who share our long-term vision and commitment to systematic excellence."
       </p>
     </motion.div>
