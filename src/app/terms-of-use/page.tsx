@@ -12,14 +12,14 @@ const TermsOfUse = () => {
       <section className="bg-navy text-white pt-32 pb-20 sm:pt-40 sm:pb-32 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div 
-            initial="hidden" 
-            animate="visible" 
+          <motion.div
+            initial="hidden"
+            animate="visible"
             variants={staggerContainer(0.1, 0)}
           >
             <motion.p variants={fadeUpItem} className="text-gold font-bold text-xs uppercase tracking-[0.4em] mb-6">Governance</motion.p>
-            <motion.h1 
-              variants={fadeUpItem} 
+            <motion.h1
+              variants={fadeUpItem}
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
@@ -27,7 +27,7 @@ const TermsOfUse = () => {
             </motion.h1>
             <motion.div variants={fadeUpItem} className="flex items-center gap-4 text-white/50 uppercase tracking-[0.2em] text-[10px] font-bold">
               <ShieldCheck size={18} className="text-gold" />
-              <span>Institutional Version • Effective April 2026</span>
+              <span>Institutional Version • Effective 1 April 2026</span>
             </motion.div>
           </motion.div>
         </div>
@@ -37,7 +37,7 @@ const TermsOfUse = () => {
       <section className="section-padding py-20 sm:py-32 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="grid gap-16 sm:gap-24">
-            
+
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
                 <span className="text-gold text-lg opacity-50 font-serif">01.</span> Introduction
@@ -157,7 +157,7 @@ const TermsOfUse = () => {
                 </a>
               </div>
               <div className="flex flex-col items-center">
-                 <Link href="/" className="bg-navy text-white px-10 py-5 text-xs font-bold uppercase tracking-widest hover:bg-gold transition-all duration-300 rounded-md">
+                <Link href="/" className="bg-navy text-white px-10 py-5 text-xs font-bold uppercase tracking-widest hover:bg-gold transition-all duration-300 rounded-md">
                   Return to Home
                 </Link>
               </div>
