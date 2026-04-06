@@ -55,7 +55,12 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  will-change: transform;
+  will-change: transform, opacity;
+  opacity: 0; /* Hidden by default to prevent overlap before GSAP starts */
+}
+
+.diagonal-section:first-child {
+  opacity: 1; /* Show first section immediately */
 }
 
 @supports (text-wrap: balance) {

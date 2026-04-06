@@ -49,12 +49,12 @@ export default function Home() {
 
       let cursor = 0;
       sectionData.forEach(({ section, arrivalUnits, internalUnits, overflow }, i) => {
-        gsap.set(section, { zIndex: i + 1 });
+        gsap.set(section, { zIndex: i + 1, opacity: i === 0 ? 1 : 0 });
         const isFooter = section.classList.contains("footer-section");
         if (i > 0) {
           tl.fromTo(
             section,
-            { xPercent: isFooter ? 0 : -100, yPercent: 100, opacity: 0.5, scale: 0.95 },
+            { xPercent: isFooter ? 0 : -100, yPercent: 100, opacity: 0, scale: 0.95 },
             { xPercent: 0, yPercent: 0, opacity: 1, scale: 1, ease: "none", duration: arrivalUnits },
             cursor
           );
@@ -122,12 +122,12 @@ export default function Home() {
     let cursor = 0;
     sectionData.forEach(({ section, partner, partners, arrivalUnits, internalUnits, overflow, skip }, i) => {
       if (skip) return;
-      gsap.set(section, { zIndex: i + 1 });
+      gsap.set(section, { zIndex: i + 1, opacity: i === 0 ? 1 : 0 });
       const isFooter = section.classList.contains("footer-section");
       if (i > 0 && arrivalUnits > 0) {
         const partnersList = partners ? partners : (partner ? [partner] : []);
         if (partnersList.length > 0) {
-          partnersList.forEach((p, idx) => gsap.set(p, { zIndex: i + idx + 2 }));
+          partnersList.forEach((p, idx) => gsap.set(p, { zIndex: i + idx + 2, opacity: 0 }));
           tl.fromTo([section, ...partnersList], { y: vh, opacity: 0, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: ROUND, ease: "none", duration: arrivalUnits }, cursor);
         } else {
           tl.fromTo(section, { y: vh, opacity: 0, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: isFooter ? "0px" : ROUND, ease: "none", duration: arrivalUnits }, cursor);
