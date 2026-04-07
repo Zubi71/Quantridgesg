@@ -26,21 +26,24 @@ export default function Home() {
       const sections = gsap.utils.toArray(".diagonal-section") as HTMLElement[];
       const vh = window.innerHeight;
 
+      const PAUSE_UNITS = 0.2;
       const sectionData = sections.map((section, i) => {
         const scrollHeight = section.scrollHeight;
         const overflow = Math.max(0, scrollHeight - vh);
         const arrivalUnits = i === 0 ? 0 : 1;
         const internalUnits = overflow / vh;
-        return { section, arrivalUnits, internalUnits, overflow };
+        // Every section that exists gets a pause unit at the end, except maybe the last one
+        const pauseUnits = i < sections.length - 1 ? PAUSE_UNITS : 0;
+        return { section, arrivalUnits, internalUnits, pauseUnits, overflow };
       });
 
-      const totalUnits = sectionData.reduce((sum, d) => sum + d.arrivalUnits + d.internalUnits, 0);
+      const totalUnits = sectionData.reduce((sum, d) => sum + d.arrivalUnits + d.internalUnits + d.pauseUnits, 0);
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           pin: true,
-          scrub: 1,
+          scrub: true,
           start: "top top",
           end: () => `+=${totalUnits * vh}`,
           invalidateOnRefresh: true,
@@ -48,13 +51,13 @@ export default function Home() {
       });
 
       let cursor = 0;
-      sectionData.forEach(({ section, arrivalUnits, internalUnits, overflow }, i) => {
+      sectionData.forEach(({ section, arrivalUnits, internalUnits, pauseUnits, overflow }, i) => {
         gsap.set(section, { zIndex: i + 1, opacity: i === 0 ? 1 : 0 });
         const isFooter = section.classList.contains("footer-section");
         if (i > 0) {
           tl.fromTo(
             section,
-            { xPercent: isFooter ? 0 : -100, yPercent: 100, opacity: 0, scale: 0.95 },
+            { xPercent: isFooter ? 0 : -100, yPercent: 100, opacity: 1, scale: 0.95 },
             { xPercent: 0, yPercent: 0, opacity: 1, scale: 1, ease: "none", duration: arrivalUnits },
             cursor
           );
@@ -63,6 +66,11 @@ export default function Home() {
         if (overflow > 0) {
           tl.to(section, { y: -overflow, ease: "none", duration: internalUnits }, cursor);
           cursor += internalUnits;
+        }
+        
+        // Add the "stuck" pause duration
+        if (pauseUnits > 0) {
+          cursor += pauseUnits;
         }
       });
       return;
@@ -90,6 +98,7 @@ export default function Home() {
       skip?: boolean;
     }
 
+    const PAUSE_UNITS = 0.2;
     const sectionData: MobileSectionData[] = allSections.map((section, i) => {
       if (i === 0) {
         const overflow = Math.max(0, section.scrollHeight - vh);
@@ -107,12 +116,12 @@ export default function Home() {
       return { section, arrivalUnits: 1, internalUnits: overflow / vh, overflow };
     });
 
-    const totalUnits = sectionData.reduce((sum, d) => sum + d.arrivalUnits + d.internalUnits, 0);
+    const totalUnits = sectionData.reduce((sum, d) => sum + d.arrivalUnits + d.internalUnits + (d.skip ? 0 : PAUSE_UNITS), 0);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         pin: true,
-        scrub: 1,
+        scrub: true,
         start: "top top",
         end: () => `+=${totalUnits * vh}`,
         invalidateOnRefresh: true,
@@ -128,9 +137,9 @@ export default function Home() {
         const partnersList = partners ? partners : (partner ? [partner] : []);
         if (partnersList.length > 0) {
           partnersList.forEach((p, idx) => gsap.set(p, { zIndex: i + idx + 2, opacity: 0 }));
-          tl.fromTo([section, ...partnersList], { y: vh, opacity: 0, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: ROUND, ease: "none", duration: arrivalUnits }, cursor);
+          tl.fromTo([section, ...partnersList], { y: vh, opacity: 1, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: ROUND, ease: "none", duration: arrivalUnits }, cursor);
         } else {
-          tl.fromTo(section, { y: vh, opacity: 0, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: isFooter ? "0px" : ROUND, ease: "none", duration: arrivalUnits }, cursor);
+          tl.fromTo(section, { y: vh, opacity: 1, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: isFooter ? "0px" : ROUND, ease: "none", duration: arrivalUnits }, cursor);
         }
         cursor += arrivalUnits;
       }
@@ -139,6 +148,9 @@ export default function Home() {
         tl.to(targets, { y: -overflow, ease: "none", duration: internalUnits }, cursor);
         cursor += internalUnits;
       }
+
+      // Add the "stuck" pause duration
+      cursor += PAUSE_UNITS;
     });
   }, { scope: containerRef });
 
