@@ -72,9 +72,9 @@ const Footer = () => {
           </div>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-6 sm:gap-8 w-full lg:w-auto order-1 lg:order-2 border-t border-white/10 pt-8 lg:border-t-0 lg:pt-0">
             <div className="flex justify-center sm:justify-start gap-6 sm:gap-8 text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">
-              <a href="#" className="hover:text-gold transition-colors py-2 sm:py-0">Privacy</a>
-              <Link href="/terms-of-use" className="hover:text-gold transition-colors py-2 sm:py-0">Terms</Link>
-              <Link href="/risk-disclosure" className="hover:text-gold transition-colors py-2 sm:py-0">Risk</Link>
+              <a href="#" className="hover:text-gold transition-colors py-2 sm:py-0">Privacy Policy</a>
+              <Link href="/terms-of-use" className="hover:text-gold transition-colors py-2 sm:py-0">Terms of Use</Link>
+              <Link href="/risk-disclosure" className="hover:text-gold transition-colors py-2 sm:py-0">Risk Disclosure</Link>
             </div>
           </div>
         </div>
