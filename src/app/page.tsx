@@ -57,8 +57,8 @@ export default function Home() {
         if (i > 0) {
           tl.fromTo(
             section,
-            { xPercent: isFooter ? 0 : -100, yPercent: 100, opacity: 1, scale: 0.95 },
-            { xPercent: 0, yPercent: 0, opacity: 1, scale: 1, ease: "none", duration: arrivalUnits },
+            { xPercent: isFooter ? 0 : -100, yPercent: 100, opacity: 1 },
+            { xPercent: 0, yPercent: 0, opacity: 1, ease: "none", duration: arrivalUnits, immediateRender: false },
             cursor
           );
           cursor += arrivalUnits;
@@ -137,9 +137,9 @@ export default function Home() {
         const partnersList = partners ? partners : (partner ? [partner] : []);
         if (partnersList.length > 0) {
           partnersList.forEach((p, idx) => gsap.set(p, { zIndex: i + idx + 2, opacity: 0 }));
-          tl.fromTo([section, ...partnersList], { y: vh, opacity: 1, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: ROUND, ease: "none", duration: arrivalUnits }, cursor);
+          tl.fromTo([section, ...partnersList], { y: vh + 150, opacity: 1, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: ROUND, ease: "none", duration: arrivalUnits, immediateRender: false }, cursor);
         } else {
-          tl.fromTo(section, { y: vh, opacity: 1, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: isFooter ? "0px" : ROUND, ease: "none", duration: arrivalUnits }, cursor);
+          tl.fromTo(section, { y: vh + 150, opacity: 1, borderRadius: ROUND }, { y: 0, opacity: 1, borderRadius: isFooter ? "0px" : ROUND, ease: "none", duration: arrivalUnits, immediateRender: false }, cursor);
         }
         cursor += arrivalUnits;
       }
