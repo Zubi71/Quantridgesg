@@ -13,7 +13,7 @@ const Logo = ({ light = false }: { light?: boolean }) => (
       </svg>
     </div>
     <div className="flex flex-col">
-      <span className="text-lg sm:text-[22px] md:text-[28px] font-serif font-bold leading-none tracking-tight text-gold uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
+      <span className="text-lg sm:text-[22px] md:text-[28px] font-serif font-bold leading-none tracking-tight text-gold uppercase" style={{ fontFamily: "'Prata', serif" }}>
         QuantRidge
       </span>
       <div className="flex items-center gap-2 mt-1">
