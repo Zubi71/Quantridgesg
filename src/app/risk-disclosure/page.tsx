@@ -21,7 +21,7 @@ const RiskDisclosure = () => {
             <motion.h1 
               variants={fadeUpItem} 
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Prata', serif" }}
             >
               Risk <span className="text-gold opacity-90">Disclosure.</span>
             </motion.h1>
