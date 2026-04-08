@@ -18,9 +18,9 @@ const TermsOfUse = () => {
             variants={staggerContainer(0.1, 0)}
           >
             <motion.p variants={fadeUpItem} className="text-gold font-bold text-xs uppercase tracking-[0.4em] mb-6">Governance</motion.p>
-            <motion.h1
-              variants={fadeUpItem}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8"
+            <motion.h1 
+              variants={fadeUpItem} 
+              className="text-[2.5rem] leading-[1.1] sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-8"
               style={{ fontFamily: "'Prata', serif" }}
             >
               Terms of <span className="text-gold opacity-90">Use.</span>
@@ -36,7 +36,7 @@ const TermsOfUse = () => {
       {/* Content Section */}
       <section className="section-padding py-20 sm:py-32 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="grid gap-16 sm:gap-24">
+          <div className="grid gap-12 sm:gap-24">
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }}>
               <h2 className="text-2xl sm:text-3xl font-serif text-navy mb-8 flex items-baseline gap-4">
@@ -152,8 +152,8 @@ const TermsOfUse = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.6, ease: easeOut }} className="pt-20 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-12 text-center sm:text-left">
               <div>
                 <p className="text-gold font-bold text-xs uppercase tracking-[0.4em] mb-4">Support & Inquiries</p>
-                <a href="mailto:enquiries@quantridge.com" className="text-2xl sm:text-3xl font-serif text-navy hover:text-gold transition-all duration-300 flex items-center justify-center sm:justify-start gap-4">
-                  <Mail size={24} /> enquiries@quantridge.com
+                <a href="mailto:enquiries@quantridge.com" className="text-lg sm:text-3xl font-serif text-navy hover:text-gold transition-all duration-300 flex items-center justify-center sm:justify-start gap-3 sm:gap-4 break-all sm:break-normal">
+                  <Mail size={20} className="shrink-0" /> enquiries@quantridge.com
                 </a>
               </div>
               <div className="flex flex-col items-center">
