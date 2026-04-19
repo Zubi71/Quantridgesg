@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import { reveal, staggerContainer, fadeUpItem, easeOut } from '@/lib/motion';
 
 const CTA = () => (
@@ -14,9 +15,9 @@ const CTA = () => (
           Connect with our institutional relations team to learn more about our investment strategies and partnership opportunities.
         </motion.p>
         <motion.div variants={fadeUpItem}>
-          <button type="button" className="bg-gold text-navy px-10 sm:px-12 py-4 sm:py-5 text-sm font-bold uppercase tracking-widest hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 rounded-md w-full sm:w-auto">
+          <Link href="/contact" className="inline-block bg-gold text-navy px-10 sm:px-12 py-4 sm:py-5 text-sm font-bold uppercase tracking-widest hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 rounded-md w-full sm:w-auto">
             Contact Us
-          </button>
+          </Link>
         </motion.div>
       </motion.div>
     </motion.div>

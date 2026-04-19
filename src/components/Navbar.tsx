@@ -45,9 +45,9 @@ const Navbar = () => {
               {item}
             </Link>
           ))}
-          <button className="bg-navy text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-gold transition-all duration-300 rounded-md">
+          <Link href="/contact" className="bg-navy text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-gold transition-all duration-300 rounded-md">
             Contact Us
-          </button>
+          </Link>
         </div>
         <button
           type="button"
@@ -80,9 +80,9 @@ const Navbar = () => {
                   {item}
                 </Link>
               ))}
-              <button type="button" className="bg-navy text-white px-6 py-3 text-sm font-bold uppercase tracking-widest mt-2 rounded-md">
+              <Link href="/contact" className="bg-navy text-white px-6 py-3 text-sm font-bold uppercase tracking-widest mt-2 rounded-md text-center" onClick={() => setIsOpen(false)}>
                 Contact Us
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}

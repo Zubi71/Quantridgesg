@@ -23,3 +23,41 @@ export const fadeUpItem = {
     transition: { duration: itemDuration, ease: easeOut },
   },
 };
+
+export const slideInLeft = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: easeOut },
+  },
+};
+
+export const slideInRight = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: easeOut },
+  },
+};
+
+export const zoomIn = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: easeOut },
+  },
+};
+
+export const floating = {
+  animate: {
+    y: [0, -15, 0],
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
