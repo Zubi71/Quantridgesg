@@ -9,7 +9,7 @@ const ContactDetails = () => {
       city: 'Singapore',
       address: '78 Shenton Way, Tower 2, #06-15/16/17, Singapore (079120)',
       email: 'enquiries@quantridge.com',
-      phone: '+65 6XXX XXXX',
+      phone: '+65 8282 8223',
       hours: 'Mon - Fri: 09:00 - 18:00 (SGT)'
     }
   ];

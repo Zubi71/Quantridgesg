@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'motion/react';
-import { Globe, Zap, ChevronRight } from 'lucide-react';
+import { Globe, Zap, ChevronRight, Phone } from 'lucide-react';
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import { reveal, easeOut } from '@/lib/motion';
@@ -60,6 +60,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-white/50 font-light">
               <li className="flex gap-3"><Globe size={16} className="text-gold shrink-0" /><span>78 Shenton Way<br />Tower 2, #06-15/16/17<br />Singapore (079120)</span></li>
               <li className="flex gap-3"><Zap size={16} className="text-gold shrink-0" /><a href="mailto:enquiries@quantridge.com" className="hover:text-gold transition-colors">enquiries@quantridge.com</a></li>
+              <li className="flex gap-3"><Phone size={16} className="text-gold shrink-0" /><span className="hover:text-gold transition-colors">+65 8282 8223</span></li>
             </ul>
           </div>
         </motion.div>

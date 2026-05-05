@@ -30,7 +30,7 @@ const ContactForm = () => {
             </p>
             <div className="space-y-4">
               {[
-                { icon: Phone, label: 'Direct Line', content: '+65 6XXX XXXX' },
+                { icon: Phone, label: 'Direct Line', content: '+65 8282 8223' },
                 { icon: Mail, label: 'General Inquiry', content: 'enquiries@quantridge.com' },
                 { icon: MapPin, label: 'Office Location', content: <>78 Shenton Way<br />Tower 2, #06-15/16/17<br />Singapore (079120)</> },
               ].map((item, i) => (
