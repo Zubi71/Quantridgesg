@@ -39,7 +39,11 @@ const Navbar = () => {
           {navItems.map((item) => (
             <Link 
               key={item} 
-              href={isHome ? `#${item.toLowerCase().replace(/\s+/g, '-')}` : `/#${item.toLowerCase().replace(/\s+/g, '-')}`}
+              href={
+                item === 'What We Do' ? '/what-we-do' :
+                item === 'Who We Are' ? '/who-we-are' :
+                isHome ? `#${item.toLowerCase().replace(/\s+/g, '-')}` : `/#${item.toLowerCase().replace(/\s+/g, '-')}`
+              }
               className="text-sm font-medium text-navy/70 hover:text-navy transition-colors uppercase tracking-wider"
             >
               {item}
@@ -73,7 +77,11 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <Link 
                   key={item} 
-                  href={isHome ? `#${item.toLowerCase().replace(/\s+/g, '-')}` : `/#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={
+                    item === 'What We Do' ? '/what-we-do' :
+                    item === 'Who We Are' ? '/who-we-are' :
+                    isHome ? `#${item.toLowerCase().replace(/\s+/g, '-')}` : `/#${item.toLowerCase().replace(/\s+/g, '-')}`
+                  }
                   className="text-base sm:text-lg font-medium text-navy active:text-gold transition-colors py-3 sm:py-1 rounded-md" 
                   onClick={() => setIsOpen(false)}
                 >

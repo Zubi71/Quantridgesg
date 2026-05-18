@@ -29,6 +29,17 @@ const WhatWeDo = () => (
           </motion.div>
         ))}
       </div>
+      <motion.div 
+        className="mt-16 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={reveal}
+        transition={{ delay: 0.5 }}
+      >
+        <a href="/what-we-do" className="inline-flex items-center gap-2 text-navy font-bold uppercase tracking-widest text-sm hover:text-gold transition-colors group">
+          Detailed Expertise <span className="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </motion.div>
     </div>
   </section>
 );

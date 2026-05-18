@@ -1,0 +1,128 @@
+.leadershipSection {
+  background-color: #f3f3f3;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  .header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 48px;
+    margin-bottom: 80px;
+
+    h2 {
+      font-size: 80px;
+      font-weight: 300;
+      color: #000;
+      margin: 0;
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      margin-top: 16px;
+      font-weight: 400;
+    }
+  }
+
+  .marqueeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+
+  .marqueeRow {
+    display: flex;
+    white-space: nowrap;
+    padding: 40px 0;
+    border-bottom: 1px solid #000;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .rowContent {
+      display: flex;
+      gap: 60px;
+      padding-right: 60px;
+    }
+
+    .leaderItem {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 12px;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+
+      .name {
+        font-size: 48px;
+        font-weight: 700;
+        color: #000;
+      }
+
+      .title {
+        font-size: 48px;
+        font-weight: 300;
+        color: #888;
+      }
+
+      &:hover {
+        .name {
+          color: #gold; // We'll use a specific gold or just keep it bold
+        }
+      }
+    }
+  }
+
+  // Mobile Adjustments
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    .header {
+      padding: 0 24px;
+      margin-bottom: 40px;
+
+      h2 {
+        font-size: 48px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .marqueeRow {
+      padding: 24px 0;
+
+      .name, .title {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.cursorFollower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  pointer-events: none;
+  z-index: 100;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-cover: cover;
+  }
+}
