@@ -49,7 +49,7 @@ const WhoWeAreVision = () => (
           </motion.p>
           <motion.div variants={fadeUpItem} className="flex gap-12 items-center">
             <div>
-              <div className="text-4xl font-serif text-navy">2018</div>
+              <div className="text-4xl font-serif text-navy">2026</div>
               <div className="text-[10px] uppercase tracking-widest text-navy/40 font-bold mt-1">Founded</div>
             </div>
             <div className="w-px h-10 bg-gold/30" />

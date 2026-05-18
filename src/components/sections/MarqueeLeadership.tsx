@@ -1,89 +1,93 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
-import { motion, useSpring, useMotionValue, AnimatePresence } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { motion, useSpring, useMotionValue, AnimatePresence, useAnimation } from 'motion/react';
 import Link from 'next/link';
 import styles from './MarqueeLeadership.module.scss';
 
 const leaders = [
-  { 
-    name: 'Igor', 
-    title: 'Chairman, Chief Executive Officer, Chairman of the Office of the CIO, Head of Research', 
+  {
+    name: 'Igor',
+    title: 'Chairman, Chief Executive Officer, Chairman of the Office of the CIO, Head of Research',
     image: '/igor_leader_chairman_1778669350284.png',
     slug: 'igor'
   },
-  { 
-    name: 'Paul Griffin', 
-    title: 'Co-Chief Investment Officer and Chief Science Officer', 
+  {
+    name: 'Paul Griffin',
+    title: 'Co-Chief Investment Officer and Chief Science Officer',
     image: '/paul_griffin_leader_1778668987914.png',
     slug: 'paul-griffin'
   },
-  { 
-    name: 'Nitish Maini', 
-    title: 'Chief Strategy Officer', 
+  {
+    name: 'Nitish Maini',
+    title: 'Chief Strategy Officer',
     image: '/nitish_maini_leader_1778669247851.png',
     slug: 'nitish-maini'
   },
-  { 
-    name: 'Marcus Thorne', 
-    title: 'Managing Director, Risk Management', 
+  {
+    name: 'Marcus Thorne',
+    title: 'Managing Director, Risk Management',
     image: '/leadership_1_ceo_1778663528218.png',
     slug: 'marcus-thorne'
   },
-  { 
-    name: 'Sarah Chen', 
-    title: 'Head of Quantitative Technology', 
+  {
+    name: 'Sarah Chen',
+    title: 'Head of Quantitative Technology',
     image: '/leadership_2_cto_1778663812483.png',
     slug: 'sarah-chen'
   },
-  { 
-    name: 'Julian Ross', 
-    title: 'Head of Systematic Alpha', 
+  {
+    name: 'Julian Ross',
+    title: 'Head of Systematic Alpha',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800&h=1000',
     slug: 'julian-ross'
   },
-  { 
-    name: 'Elena Kostic', 
-    title: 'Director of Machine Learning', 
+  {
+    name: 'Elena Kostic',
+    title: 'Director of Machine Learning',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800&h=1000',
     slug: 'elena-kostic'
   },
-  { 
-    name: 'Thomas Wu', 
-    title: 'Head of Execution Engineering', 
+  {
+    name: 'Thomas Wu',
+    title: 'Head of Execution Engineering',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800&h=1000',
     slug: 'thomas-wu'
   }
 ];
 
 const Row = ({ leaders, direction = 1, speed = 40, onHover }: { leaders: any[], direction?: number, speed?: number, onHover: (img: string | null) => void }) => {
-  const [isPaused, setIsPaused] = useState(false);
-  
-  // Multiply items to ensure seamless loop
+  const controls = useAnimation();
+
   const duplicatedLeaders = [...leaders, ...leaders, ...leaders, ...leaders];
 
+  const startAnimation = () => {
+    controls.start({
+      x: direction > 0 ? [0, -1000] : [-1000, 0],
+      transition: {
+        repeat: Infinity,
+        repeatType: 'loop' as const,
+        duration: speed,
+        ease: 'linear',
+      },
+    });
+  };
+
+  useEffect(() => {
+    startAnimation();
+  }, []);
+
   return (
-    <div 
+    <div
       className={styles.marqueeRow}
-      onMouseEnter={() => setIsPaused(true)}
+      onMouseEnter={() => controls.stop()}
       onMouseLeave={() => {
-        setIsPaused(false);
+        startAnimation();
         onHover(null);
       }}
     >
-      <motion.div 
+      <motion.div
         className={styles.rowContent}
-        animate={{
-          x: direction > 0 ? [0, -1000] : [-1000, 0]
-        }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: speed,
-            ease: "linear",
-            paused: isPaused
-          }
-        }}
+        animate={controls}
       >
         {duplicatedLeaders.map((leader, i) => (
           <Link 
