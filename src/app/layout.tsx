@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.png",
-        width: 1200,
-        height: 630,
+        width: 512,
+        height: 512,
         alt: "QuantRidge Capital",
       },
     ],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "QuantRidge Capital",
     description: "Institutional-grade quantitative trading firm combining mathematical rigour with technological innovation.",
     images: ["/logo.png"],
