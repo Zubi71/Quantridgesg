@@ -7,7 +7,7 @@ const researchAreas = [
   {
     icon: Brain,
     title: "Deep Learning",
-    desc: "Utilizing neural architectures to uncover non-linear relationships in multi-dimensional datasets."
+    desc: "Utilising neural architectures to uncover non-linear relationships in multi-dimensional datasets."
   },
   {
     icon: Network,

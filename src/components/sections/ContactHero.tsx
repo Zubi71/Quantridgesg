@@ -43,7 +43,7 @@ const ContactHero = () => {
             variants={fadeUpItem} 
             className="text-white/60 text-lg sm:text-xl md:text-2xl font-light max-w-2xl leading-relaxed"
           >
-            QuantRidge Capital operates at the intersection of mathematical rigor and technological innovation. Reach out to discuss how our strategies can align with your institutional objectives.
+            QuantRidge Capital operates at the intersection of mathematical rigour and technological innovation. Reach out to discuss how our strategies can align with your institutional objectives.
           </motion.p>
         </motion.div>
       </div>

@@ -23,7 +23,7 @@ const steps = [
   {
     icon: BarChart,
     title: "Systematic Construction",
-    desc: "Portfolio construction is fully automated and objective. We optimize for risk-adjusted returns while adhering to institutional-grade liquidity and capacity constraints.",
+    desc: "Portfolio construction is fully automated and objective. We optimise for risk-adjusted returns whilst adhering to institutional-grade liquidity and capacity constraints.",
     metric: "24/7",
     metricLabel: "Global Execution",
     image: "/systematic_construction_abstract_1778143898603.png"
