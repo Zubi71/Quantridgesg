@@ -37,8 +37,8 @@ const Footer = () => {
         <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ delay: 0.08, duration: 0.55, ease: easeOut }}>
           <h4 className="font-sans font-bold text-[10px] uppercase tracking-[0.3em] text-gold mb-8">Navigation</h4>
           <ul className="space-y-4 text-sm text-white/50">
-            <li><a href="#" className="hover:text-gold transition-colors duration-300 flex items-center gap-2"><ChevronRight size={12} /> Home</a></li>
-            <li><a href="#what-we-do" className="hover:text-gold transition-colors duration-300 flex items-center gap-2"><ChevronRight size={12} /> What We Do</a></li>
+            <li><Link href="/" className="hover:text-gold transition-colors duration-300 flex items-center gap-2"><ChevronRight size={12} /> Home</Link></li>
+            <li><Link href="/what-we-do" className="hover:text-gold transition-colors duration-300 flex items-center gap-2"><ChevronRight size={12} /> What We Do</Link></li>
             <li><a href="#strategy" className="hover:text-gold transition-colors duration-300 flex items-center gap-2"><ChevronRight size={12} /> Strategy</a></li>
             <li><a href="#markets" className="hover:text-gold transition-colors duration-300 flex items-center gap-2"><ChevronRight size={12} /> Markets</a></li>
             <li><a href="#risk" className="hover:text-gold transition-colors duration-300 flex items-center gap-2"><ChevronRight size={12} /> Risk Management</a></li>
