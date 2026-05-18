@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Prata&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Nimbus Sans", "Archivo", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Prata", serif;
+  --font-sans: "Nimbus Sans", var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-prata), serif;
   
   --color-navy: #0A1F44;
   --color-navy-light: #152B52;
