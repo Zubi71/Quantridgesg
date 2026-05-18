@@ -9,7 +9,7 @@ const Logo = ({ light = false }: { light?: boolean }) => (
       alt="QuantRidge Capital"
       width={180}
       height={56}
-      className={`h-9 sm:h-11 w-auto object-contain ${light ? 'brightness-0 invert' : ''}`}
+      className={`h-11 sm:h-14 w-auto object-contain ${light ? 'brightness-0 invert' : ''}`}
       priority
     />
   </Link>
