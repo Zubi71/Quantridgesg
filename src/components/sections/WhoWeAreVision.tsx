@@ -45,7 +45,7 @@ const WhoWeAreVision = () => (
             <span className="italic text-gold">Hidden Order.</span>
           </motion.h2>
           <motion.p variants={fadeUpItem} className="text-navy/70 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-            In an era of noise and irrationality, QuantRidge stands as a beacon of mathematical truth. We leverage advanced statistical modeling and machine learning to extract signal from chaos.
+            In an era of noise and irrationality, QuantRidge stands as a beacon of mathematical truth. We leverage advanced statistical modelling and machine learning to extract signal from chaos.
           </motion.p>
           <motion.div variants={fadeUpItem} className="flex gap-12 items-center">
             <div>

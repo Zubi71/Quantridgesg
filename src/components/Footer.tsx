@@ -19,7 +19,7 @@ const Footer = () => {
         <motion.div className="lg:col-span-1" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={reveal} transition={{ duration: 0.55, ease: easeOut }}>
           <Logo light />
           <p className="mt-8 text-white/50 text-sm max-w-md leading-relaxed font-light">
-            QuantRidge Capital is a global investment management firm specializing in quantitative trading strategies. We combine mathematical rigor with technological innovation.
+            QuantRidge Capital is a global investment management firm specialising in quantitative trading strategies. We combine mathematical rigour with technological innovation.
           </p>
           <div className="mt-10 flex gap-6">
             {[

@@ -28,7 +28,7 @@ const ScientificCulture = () => (
           <motion.div variants={fadeUpItem} className="grid sm:grid-cols-2 gap-8">
             <div className="border-l border-gold/30 pl-6">
               <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-2">Academic Excellence</h4>
-              <p className="text-white/40 text-sm leading-relaxed">Collaborative research environment modeled after top-tier academic institutions.</p>
+              <p className="text-white/40 text-sm leading-relaxed">Collaborative research environment modelled after top-tier academic institutions.</p>
             </div>
             <div className="border-l border-gold/30 pl-6">
               <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-2">Meritocratic Rigor</h4>
