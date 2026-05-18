@@ -24,7 +24,35 @@ const prata = Prata({
 
 export const metadata: Metadata = {
   title: "QuantRidge Capital",
-  description: "Institutional Grade Quantitative Trading",
+  description: "Institutional-grade quantitative trading firm combining mathematical rigour with technological innovation to capture alpha in global financial markets.",
+  metadataBase: new URL("https://www.quantridge.sg"),
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    title: "QuantRidge Capital",
+    description: "Institutional-grade quantitative trading firm combining mathematical rigour with technological innovation to capture alpha in global financial markets.",
+    url: "https://www.quantridge.sg",
+    siteName: "QuantRidge Capital",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "QuantRidge Capital",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QuantRidge Capital",
+    description: "Institutional-grade quantitative trading firm combining mathematical rigour with technological innovation.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
